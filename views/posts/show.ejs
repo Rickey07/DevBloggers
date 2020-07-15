@@ -1,0 +1,12 @@
+<div class="post-container">
+    <h1><%= post.title  %> </h1>
+    <div>
+        <%= post.createdAt.toLocaleDateString() %>
+    </div>
+    <a href="/">All Articles</a>
+    <a href="/posts/<%= post.id %>/edit">Edit</a>
+
+    <div>
+        <%- post.sanitizedHtml %>
+    </div>
+</div>

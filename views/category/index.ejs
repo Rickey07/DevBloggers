@@ -1,0 +1,20 @@
+<% if(title) { %>
+
+    <h1><%= title %></h1>
+
+<% } %>
+<%- include('./adminnav.ejs') %>
+<a href="/categories/new">Add a New Category</a>
+<div>
+    <% if (categories) { %>
+     <% categories.forEach((category) => { %>
+        <div>
+            <li><%= category.name %></li>
+            <a href="/categories/<%= category._id %>/edit">Edit</a>
+            <form action="/categories/<%= category._id %>/edit?_method=DELETE" method="POST">
+                <input type="submit" value="Delete">
+            </form>
+        </div>
+     <%   }) %>
+    <% } %> 
+</div>

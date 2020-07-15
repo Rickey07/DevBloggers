@@ -1,0 +1,16 @@
+<%- include('./adminnav.ejs') %>
+
+<% if (title) { %>
+    <h1><%= title %></h1>
+ <%  } %> 
+
+ <% if (category) { %> 
+    <div>
+        <form action="/categories/<%= category._id %>/edit?_method=PUT" method="POST"> 
+            <label for="name"></label>
+            <input type="text" id="name" name="name" value="<%= category.name %>">
+            <a href="/categories">Cancel</a>
+            <input type="submit" value="Update">
+        </form>
+     </div>
+ <% } %>

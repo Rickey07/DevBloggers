@@ -1,0 +1,4 @@
+<h1>Edit <%= post.title %></h1>
+<form action="/posts/<%= post.id %>?_method=PUT" method="POST">;
+    <%- include('./_form-fields.ejs');  %>
+</form>
